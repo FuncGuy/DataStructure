@@ -24,25 +24,25 @@ public class MergingTwoSortedLists {
         ListNode head = new ListNode(0);
         ListNode merged = head;
 
+        if(l1 == null && l2!= null){
+            return l2;
+        }
         if(l1 != null && l2 == null){
             return l1;
         }
 
-        if(l1 == null && l2 != null){
-            return l2;
-        }
-
-        while (list1 != null && list2 != null) {
-            if (list1.val < list2.val) {
+        while(list1!=null && list2!=null){
+            if(list1.val < list2.val){
                 merged.next = list1;
                 list1 = list1.next;
-            } else {
+            }else{
                 merged.next = list2;
                 list2 = list2.next;
             }
-
             merged = merged.next;
         }
+
+
         while (list1 != null){
             merged.next = list1;
             list1 = list1.next;
@@ -54,8 +54,9 @@ public class MergingTwoSortedLists {
             list2 = list2.next;
             merged = merged.next;
         }
+
         return head.next;
- }
+    }
 
    public static void main(String[] args){
         // head1 - - - - - > 1 -> 3
