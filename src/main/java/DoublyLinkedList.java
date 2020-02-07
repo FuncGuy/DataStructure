@@ -73,6 +73,18 @@ public class DoublyLinkedList {
         next.prev = previous;
     }
 
+    public static void deleteTailNode(){
+
+        Node temp = head;
+        Node prev;
+
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        prev = temp.prev;
+        prev.next = null;
+    }
+
 
     public static void main(String[] args) {
 
@@ -129,6 +141,12 @@ public class DoublyLinkedList {
         System.out.println("After deleting given node");
 
         deleteGivenNode(node1);
+
+        display();
+
+        System.out.println("After deleting tail node");
+
+        deleteTailNode();
 
         display();
 
