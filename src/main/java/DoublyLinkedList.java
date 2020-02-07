@@ -18,6 +18,13 @@ public class DoublyLinkedList {
         }
     }
 
+    public static void insertBeforeHead(int data){
+        Node node0 = new Node(data);
+        node0.next = head;
+        head.prev = node0;
+        head = node0;
+    }
+
     public static void main(String[] args) {
 
         DoublyLinkedList dlist = new DoublyLinkedList();
@@ -42,7 +49,16 @@ public class DoublyLinkedList {
         node4.next = node5;
         node5.prev = node4;
 
+        System.out.println("Before inserting at the head");
+
         display();
+
+        System.out.println("After inserting at the head");
+
+        insertBeforeHead(0);
+
+        display();
+
 
 
     }
