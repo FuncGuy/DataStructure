@@ -4,6 +4,11 @@ public class InterSectionOfTwoList {
 
     private static int findTheInterSection(LinkedList linkedList1, LinkedList linkedList2) {
 
+        // 1) find the length of both the linked list
+        // 2) find the difference (d) from the above lengths i.e (int d = len1 - len2)
+        // 3) move the longer linked list by 'd'
+        // 4) traverse both the linked list and stop whenever the data matches in both linked list.
+
         int length1 = 0;
         int length2 = 0;
 
