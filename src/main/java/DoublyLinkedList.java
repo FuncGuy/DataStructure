@@ -25,6 +25,25 @@ public class DoublyLinkedList {
         head = node0;
     }
 
+    public static void insertAfterGiveNode(Node node, int data) {
+
+        Node newNode = new Node(data);
+
+        Node temp1 = head;
+
+        while (temp1 != null && temp1 != node){
+            temp1 = temp1.next;
+        }
+
+        Node next_pointer = temp1.next;
+
+        temp1.next = newNode;
+        newNode.prev= temp1;
+        newNode.next = next_pointer;
+        next_pointer.prev = newNode;
+
+    }
+
     public static void main(String[] args) {
 
         DoublyLinkedList dlist = new DoublyLinkedList();
@@ -56,6 +75,12 @@ public class DoublyLinkedList {
         System.out.println("After inserting at the head");
 
         insertBeforeHead(0);
+
+        display();
+
+        System.out.println("After inserting at the middle");
+
+        insertAfterGiveNode(node3, 3);
 
         display();
 
