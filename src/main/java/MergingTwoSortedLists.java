@@ -59,9 +59,11 @@ public class MergingTwoSortedLists {
     }
 
    public static void main(String[] args){
+
         // head1 - - - - - > 1 -> 3
         // head2 - - - - - > 2 -> 4
         // Merge - - - - - > 1 -> 2 -> 3 -> 4
+
         MergingTwoSortedLists obj = new MergingTwoSortedLists();
         obj.head1 = obj.new ListNode(1);
         obj.head1.next = obj.new ListNode(3);

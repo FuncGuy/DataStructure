@@ -79,10 +79,5 @@ public class InterSectionOfTwoList {
         linkedList2.head.next.next.next.next = node6;
 
         System.out.println(findTheInterSection(linkedList1, linkedList2));
-
-
-
     }
-
-
 }

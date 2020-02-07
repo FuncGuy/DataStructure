@@ -1,10 +1,10 @@
 package SinglyLinkedList;
 
 public class LinkedList {
-    static Node head;
-    static class Node{
-        int data;
-        Node next;
+    public Node head;
+    public static class Node{
+        public int data;
+        public Node next;
         public Node(int data){
             this.data = data;
         }
@@ -95,6 +95,18 @@ public class LinkedList {
         return temp;
     }
 
+    public Node reverseLinkedList(){
+        Node current = head;
+        Node prev = null, next;
+        while (current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
     public static void main(String[] args) {
 
         LinkedList linkedList = new LinkedList();
@@ -111,7 +123,7 @@ public class LinkedList {
         linkedList.head.next.next.next.next = node5;
 
         linkedList.display();
-        linkedList.insertAtFirst(0);
+        /*linkedList.insertAtFirst(0);
         System.out.println("After inserting at the beginning");
         linkedList.display();
         System.out.println("After inserting at the last");
@@ -125,6 +137,9 @@ public class LinkedList {
         linkedList.display();
         System.out.println("After removing the tail of the list");
         linkedList.display(linkedList.removeTailOfTheList());
+        System.out.println("After Reversing the linked list");*/
+        linkedList.display(linkedList.reverseLinkedList());
+
 
 
     }
