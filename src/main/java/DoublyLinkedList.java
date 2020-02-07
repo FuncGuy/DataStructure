@@ -35,6 +35,10 @@ public class DoublyLinkedList {
         node.prev = temp;
     }
 
+    public static void deleteHeadNode(){
+        head = head.next;
+    }
+
     public static void insertAfterGiveNode(Node node, int data) {
 
         Node newNode = new Node(data);
@@ -100,7 +104,11 @@ public class DoublyLinkedList {
 
         display();
 
+        System.out.println("After deleting head node");
 
+        deleteHeadNode();
+
+        display();
 
     }
 }
