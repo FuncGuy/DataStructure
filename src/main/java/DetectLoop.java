@@ -2,6 +2,9 @@ import SinglyLinkedList.LinkedList;
 
 public class DetectLoop {
 
+    //have to pointers p and q initially point to the head
+    // increment p pointer by one step and q followed by two step
+    // check whether p and q matches if matches return true
     private static boolean findloop(LinkedList linkedList){
         LinkedList.Node p = linkedList.head;
         LinkedList.Node q = linkedList.head;
