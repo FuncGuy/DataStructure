@@ -2,7 +2,7 @@ import SinglyLinkedList.LinkedList;
 
 public class DeleteGivenNode {
     
-   // it is just simpple
+   // it is just simple
    // for a given node which is to be deleted get its next node and store it in temp node 
    // override the node data with temp data that is copying the node's next value into node data
    // make the pointer of node point to the next of temp 
