@@ -18,6 +18,14 @@ public class LinkedList {
         }
     }
 
+    public void display(Node head){
+        Node temp = head;
+        while (temp != null){
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
+
     public void insertAtFirst(int data){
         Node newNode = new Node(data);
         Node temp = this.head;
@@ -72,6 +80,21 @@ public class LinkedList {
         temp.next = tempNode;
     }
 
+    public Node removeHeadOfTheList(){
+        Node temp = head;
+        head = head.next;
+        return head;
+    }
+
+    public Node removeTailOfTheList(){
+        Node temp = head;
+        while(temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+        return temp;
+    }
+
     public static void main(String[] args) {
 
         LinkedList linkedList = new LinkedList();
@@ -98,8 +121,11 @@ public class LinkedList {
         linkedList.insertAtMiddle(3);
         linkedList.display();
         System.out.println("After inserting at given position");
-        linkedList.insertAtGivenPosition(0, 2);
+        linkedList.insertAtGivenPosition(1, 2);
         linkedList.display();
+        System.out.println("After removing the tail of the list");
+        linkedList.display(linkedList.removeTailOfTheList());
+
 
     }
 }
