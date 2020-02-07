@@ -1,13 +1,13 @@
 public class MergingTwoSortedLists {
+    
+    ListNode head1;
+    ListNode head2;
 
     private class ListNode {
         int val;
         ListNode next;
         ListNode(int x) { val = x; }
     }
-
-    ListNode head1;
-    ListNode head2;
 
     public void display(ListNode head){
         ListNode temp = head;
