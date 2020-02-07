@@ -73,6 +73,23 @@ public class DoublyLinkedList {
         next.prev = previous;
     }
 
+    public static void reverse(){
+
+        Node temp = head;
+
+        while (temp.next != null){
+            temp = temp.next;
+        }
+
+        head = temp;
+
+        while (head != null){
+            System.out.println(head.data);
+            head = head.prev;
+        }
+
+    }
+
     public static void deleteTailNode(){
 
         Node temp = head;
@@ -149,6 +166,11 @@ public class DoublyLinkedList {
         deleteTailNode();
 
         display();
+
+        System.out.println("After reverse");
+
+        reverse();
+
 
     }
 }
