@@ -90,6 +90,17 @@ public class DoublyLinkedList {
 
     }
 
+    public static void updateGivenNode(Node node, int data){
+
+        Node temp = head;
+
+        while (temp != null && temp != node){
+            temp = temp.next;
+        }
+        temp.data = data;
+
+    }
+
     public static void deleteTailNode(){
 
         Node temp = head;
@@ -167,10 +178,15 @@ public class DoublyLinkedList {
 
         display();
 
+        System.out.println("After updating the given node");
+
+        updateGivenNode(node2, 22);
+
+        display();
+
         System.out.println("After reverse");
 
         reverse();
-
 
     }
 }
