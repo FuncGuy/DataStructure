@@ -25,6 +25,16 @@ public class DoublyLinkedList {
         head = node0;
     }
 
+    public static void insertAtTheEnd(int data){
+        Node node = new Node(data);
+        Node temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = node;
+        node.prev = temp;
+    }
+
     public static void insertAfterGiveNode(Node node, int data) {
 
         Node newNode = new Node(data);
@@ -81,6 +91,12 @@ public class DoublyLinkedList {
         System.out.println("After inserting at the middle");
 
         insertAfterGiveNode(node3, 3);
+
+        display();
+
+        System.out.println("After inserting at the end");
+
+        insertAtTheEnd(6);
 
         display();
 
