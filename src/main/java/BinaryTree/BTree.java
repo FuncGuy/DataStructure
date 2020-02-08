@@ -15,13 +15,13 @@ public class BTree {
         public Node rchild;
     }
 
-    private static void preorder(Node root) {
+    private static void preOrder(Node root) {
         if(root == null){
             return;
         }
         System.out.println(root.data);
-        preorder(root.lchild);
-        preorder(root.rchild);
+        preOrder(root.lchild);
+        preOrder(root.rchild);
     }
 
     private static void inOrder(Node root){
@@ -45,6 +45,30 @@ public class BTree {
         postOrder(root.rchild);
         System.out.println(root.data);
     }
+
+    private static void levelOrder(Node root) {
+
+        Queue<Node> q = new LinkedList();
+        Node p;
+        System.out.println(root.data);
+        q.add(root);
+
+        while (!q.isEmpty()){
+            p = q.poll();
+
+            if(p.lchild != null){
+                System.out.println(p.lchild.data);
+                q.add(p.lchild);
+            }
+
+            if(p.rchild != null){
+                System.out.println(p.rchild.data);
+                q.add(p.rchild);
+            }
+        }
+
+    }
+
 
     public static void create(){
 
@@ -121,7 +145,7 @@ public class BTree {
 
         System.out.println("pre order");
 
-        preorder(root);
+        preOrder(root);
 
         System.out.println("in order");
 
@@ -130,6 +154,9 @@ public class BTree {
         System.out.println("post order");
 
         postOrder(root);
-    }
 
+        System.out.println("level order");
+
+        levelOrder(root);
+    }
 }
