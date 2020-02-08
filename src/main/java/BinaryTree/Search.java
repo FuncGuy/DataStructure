@@ -27,6 +27,36 @@ public class Search {
             }
         }
 
+        public static void insert(Node root, int key){
+            Node r;
+            while (root != null){
+                r = root;
+                if (key == root.key){
+                    return;
+                }else if(key < root.key){
+                    root = root.left;
+                }else{
+                    root = root.right;
+                }
+                Node p = new Node(key);
+                if(p.key < r.key){
+                    r.left = p;
+                }else{
+                    r.right = p;
+                }
+
+            }
+        }
+
+        public static void preorder(Node root){
+            if(root == null){
+                return;
+            }
+            System.out.println(root.key);
+            preorder(root.left);
+            preorder(root.right);
+        }
+
 
         public static void main(String[] args) {
             Node root = new Node(10);
@@ -34,7 +64,11 @@ public class Search {
             root.right = new Node(20);
             root.left.right = new Node(8);
             root.right.left = new Node(15);
-            System.out.println(search(root, 15) != null);
+            System.out.println("Before inserting");
+            preorder(root);
+            System.out.println("After inserting");
+            insert(root, 2);
+            preorder(root);
 
         }
     }
