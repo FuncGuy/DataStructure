@@ -53,6 +53,3 @@ class NthNode
         NthInorder(root, n);
     }
 }
-
-// This code is contributed
-// by Arnab Kundu
