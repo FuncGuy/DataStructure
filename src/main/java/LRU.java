@@ -4,7 +4,7 @@ package LRUCacheImpl;
 import java.util.HashMap;
 
 
-class Program {
+class LRU {
     static class LRUCache {
         HashMap<String, DoublyLinkedListNode> cache = new HashMap<>();
         int maxSize;
