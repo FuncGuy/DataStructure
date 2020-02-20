@@ -16,8 +16,8 @@ class VerticalOrderBtree
         Node right;
 
         // Constructor
-        Node(int data) {
-            key = data;
+        Node(int key) {
+            this.key = key;
         }
     }
 
@@ -59,7 +59,7 @@ class VerticalOrderBtree
         // Create a map and store vertical order in map using
         // function getVerticalOrder()
         TreeMap<Integer, List<Integer>> m = new TreeMap<>();
-        int hd =0;
+        int hd = 0;
         getVerticalOrder(root,hd,m);
 
         // Traverse the map and print nodes at every horizontal
